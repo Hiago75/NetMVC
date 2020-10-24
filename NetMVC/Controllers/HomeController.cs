@@ -17,7 +17,8 @@ namespace NetMVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sistema de vendas feito em MVC a partir do C# ASP .NET Core.";
+
 
             return View();
         }
