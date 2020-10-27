@@ -26,7 +26,7 @@ namespace NetMVC.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Uma pagina de contato.";
 
             return View();
         }
