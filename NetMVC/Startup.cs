@@ -37,7 +37,7 @@ namespace NetMVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<NetMVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("NetMVCContext")));
+                    options.UseMySql(Configuration.GetConnectionString("NetMVCContext"), builder => builder.MigrationsAssembly("NetMVC")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
