@@ -33,7 +33,7 @@ namespace NetMVC.Controllers
         public IActionResult Create(Seller seller)
         {
             _sellerService.Insert(seller);
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
         }
     }
 }
