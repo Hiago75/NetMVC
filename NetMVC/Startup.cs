@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using NetMVC.Data;
-
+using NetMVC.Models.Services;
 namespace NetMVC
 {
     public class Startup
@@ -40,6 +40,7 @@ namespace NetMVC
                     options.UseMySql(Configuration.GetConnectionString("NetMVCContext"), builder => builder.MigrationsAssembly("NetMVC")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
