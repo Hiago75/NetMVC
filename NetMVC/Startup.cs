@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using NetMVC.Data;
-using NetMVC.Models.Services;
+using NetMVC.Services;
 namespace NetMVC
 {
     public class Startup
@@ -41,6 +41,7 @@ namespace NetMVC
 
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
