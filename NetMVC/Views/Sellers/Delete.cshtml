@@ -1,0 +1,51 @@
+﻿@model NetMVC.Models.Seller
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Você tem certeza que deseja deletar isso ?</h3>
+
+<div>
+    <h4>Vendedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Nome
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+        <dt>
+            Data de nascimento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+
+        <dt>
+            Salário base
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BaseSalary)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for"Id" />
+        <input type="submit" value="Deletar" class="btn-danger" />
+        <a asp-action="Index">Voltar para a lista</a>
+    </form>
+</div>
