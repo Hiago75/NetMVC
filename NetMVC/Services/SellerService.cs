@@ -37,9 +37,16 @@ namespace NetMVC.Services
 
         public async Task RemoveAsync(int id)
         {
-            var obj = await _context.Seller.FindAsync(id);
-            _context.Seller.Remove(obj);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var obj = await _context.Seller.FindAsync(id);
+                _context.Seller.Remove(obj);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegretyException("Não é possivel deletar o(a) vendedor(a) em questão por que este(a) possui vendas");
+            }
         }
 
         public async Task UpdateAsync(Seller obj)
