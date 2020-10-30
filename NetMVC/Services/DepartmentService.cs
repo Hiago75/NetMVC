@@ -1,8 +1,10 @@
-﻿using NetMVC.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NetMVC.Data;
 using NetMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NetMVC.Services
 {
@@ -15,9 +17,9 @@ namespace NetMVC.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
